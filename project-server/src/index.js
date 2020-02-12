@@ -1,12 +1,10 @@
 require('./models/User');
-require('./models/Track');
 require('./models/Challenge');
 require('./models/Blog');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
-const trackRoutes = require('./routes/trackRoutes');
 const challengeRoutes = require('./routes/challengeRoutes');
 const blogRoutes = require('./routes/blogRoutes');
 const requireAuth = require('./middlewares/requireAuth');
@@ -15,7 +13,6 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
-app.use(trackRoutes);
 app.use(challengeRoutes);
 app.use(blogRoutes);
 
