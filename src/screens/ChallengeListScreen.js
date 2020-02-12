@@ -11,7 +11,7 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 
 const ChallengeListScreen = ({ navigation }) => {
     const { state, fetchChallenges } = useContext(ChallengeContext);  
-    const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
+    // const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80];
 
     return (
     <SafeAreaView forceInset={{top:'always'}} style={styles.container}>
@@ -58,33 +58,23 @@ const ChallengeListScreen = ({ navigation }) => {
                 />
             </View>
             <View style={{ flex: 1, marginTop: -80 }}>
-            <Text h5 style={{padding:10, paddingLeft: 15, fontWeight: '400', textAlign: 'center'}}>Track your impact</Text>
-            <View style={styles.chart}>
-            <Text h5 style={{padding:10, color: 'white', fontWeight: 'bold', textAlign: 'center'}}>Chart</Text>
+                <Text h5 style={{padding:10, paddingLeft: 15, fontWeight: '400', textAlign: 'center'}}>Track your impact</Text>
+                    <View style={styles.chart}>
+                        <Text h5 style={{padding:10, color: 'white', fontWeight: 'bold', textAlign: 'center'}}>Chart</Text>
+                    </View>
             </View>
-            </View>
-    
-            {/* <Spacer /> */}
-            {/* <Button 
-                title="Go to Account Settings"
-                onPress={() => navigation.navigate('Account')}
-            /> */}
             <View>
                 <TouchableOpacity onPress={() => navigation.navigate('Survey')}>
                     <View>
                     <ListItem 
-                            containerStyle={{backgroundColor: '#66b8af'}}
-                            chevron title="Take survey for personalised app experience"
-                            titleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 13 }}
-                            chevron={{ color: 'white' }} 
-                            />
+                        containerStyle={{backgroundColor: '#66b8af'}}
+                        chevron title="Take survey for personalised app experience"
+                        titleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 13 }}
+                        chevron={{ color: 'white' }} 
+                    />
                     </View>
-                    </TouchableOpacity>
-                </View>
-            {/* <Button 
-                title="Go to Survey"
-                onPress={() => navigation.navigate('Survey')}
-            /> */}
+                </TouchableOpacity>
+            </View>
     </SafeAreaView>
     )
 };
@@ -146,7 +136,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#e96d64',
         alignSelf: 'center'
-
     }
 });
 

@@ -1,4 +1,4 @@
-// import '../_mockLocation';
+// use this import to test location if mobile location not working -- import '../_mockLocation';
 import React, {useEffect, useState, useContext} from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'react-native-elements';
@@ -34,11 +34,11 @@ const EventScreen = () => {
 
     return (
         <SafeAreaView forceInset={{top:'always'}}>
-        <Text h3>Find an Event</Text>
-        <Map />
-        {err ? <Text> Please enable location services to see events near you!</Text> : null}
+            <Text h3>Find an Event</Text>
+            <Map />
+            {err ? <Text> Please enable location services to see events near you!</Text> : null}
         </SafeAreaView>
-        );
+    );
 };
 
 EventScreen.navigationOptions = {

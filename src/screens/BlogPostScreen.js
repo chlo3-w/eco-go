@@ -18,7 +18,7 @@ const blogPostScreen = ({navigation}) => {
             size='large'
             styles={styles.activityIndicator}
           />
-          </View>
+        </View>
         );
       }
 

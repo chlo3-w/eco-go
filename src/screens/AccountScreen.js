@@ -13,14 +13,14 @@ const AccountScreen = () => {
 
     return (
         <SafeAreaView forceInset={{top:'always'}}>
-        <NavigationEvents onWillFocus={fetchEmail}/>
-        <Text></Text>
-        <Spacer>
-        <Button 
-            title="Sign Out"
-            onPress={signout}
-        />
-        </Spacer>
+            <NavigationEvents onWillFocus={fetchEmail}/>
+            <Text></Text>
+            <Spacer>
+            <Button 
+                title="Sign Out"
+                onPress={signout}
+            />
+            </Spacer>
         </SafeAreaView>
     )
 };

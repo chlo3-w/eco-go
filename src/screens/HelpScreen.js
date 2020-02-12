@@ -4,7 +4,7 @@ import { Text } from 'react-native-elements';
 
 const HelpScreen = () => {
     return (
-    <Text h1>Help Screen</Text>
+        <Text h1>Help Screen</Text>
     )
 };
 

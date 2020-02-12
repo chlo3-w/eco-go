@@ -10,20 +10,18 @@ const SigninScreen = ({ navigation }) => {
 
     return ( 
         <View style={styles.container}>
-        <NavigationEvents 
-            onWillBlur={clearErrorMessage}
-        />
-        <AuthForm 
-            headerText="Sign in to eco:go"
-            errorMessage={state.errorMessage}
-            submitButtonText="Sign In"
-            onSubmit={signin}
-        />
-        <NavLink 
-            routeName="Signup"
-            text="Don't have an account? Click here to sign up"
-        />
-    </View>
+            <NavigationEvents onWillBlur={clearErrorMessage}/>
+            <AuthForm 
+                headerText="Sign in to eco:go"
+                errorMessage={state.errorMessage}
+                submitButtonText="Sign In"
+                onSubmit={signin}
+            />
+            <NavLink 
+                routeName="Signup"
+                text="Don't have an account? Click here to sign up"
+            />
+        </View>
     );
 };
 

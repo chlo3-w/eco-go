@@ -9,21 +9,19 @@ const SignupScreen = ({ navigation }) => {
     const { state, signup, clearErrorMessage } = useContext(authContext);
 
     return (
-    <View style={styles.container}>
-        <NavigationEvents 
-            onWillBlur={clearErrorMessage}
-        />
-        <AuthForm 
-            headerText="Sign up for eco:go"
-            errorMessage={state.errorMessage}
-            submitButtonText="Sign Up"
-            onSubmit={signup}
-        />
-        <NavLink 
-            routeName="Signin"
-            text="Already have an account? Click here to sign in"
-        />
-    </View>
+        <View style={styles.container}>
+            <NavigationEvents onWillBlur={clearErrorMessage}/>
+            <AuthForm 
+                headerText="Sign up for eco:go"
+                errorMessage={state.errorMessage}
+                submitButtonText="Sign Up"
+                onSubmit={signup}
+            />
+            <NavLink 
+                routeName="Signin"
+                text="Already have an account? Click here to sign in"
+            />
+        </View>
     );
 };
 

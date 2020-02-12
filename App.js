@@ -22,12 +22,6 @@ import { Provider as ChallengeProvider } from './src/context/challengeContext';
 import { Provider as BlogProvider } from './src/context/blogContext';
 import { Feather } from '@expo/vector-icons';
 
-// const surveyFlow = createStackNavigator({
-//     Survey: SurveyScreen,
-//     SurveyComplete: SurveyCompleteScreen
-
-// });
-
 const challengeFlow = createStackNavigator({
       ChallengeList: ChallengeListScreen,
       ChallengeDetail: ChallengeDetailScreen,
@@ -73,13 +67,13 @@ const App = createAppContainer(switchNavigator);
 export default () => {
   return (
     <ChallengeProvider>
-    <BlogProvider>
-    <LocationProvider>
-    <AuthProvider>
-      <App ref={ navigator => { setNavigator(navigator) }} />
-    </AuthProvider>
-    </LocationProvider>
-    </BlogProvider>
+      <BlogProvider>
+        <LocationProvider>
+          <AuthProvider>
+            <App ref={ navigator => { setNavigator(navigator) }} />
+          </AuthProvider>
+        </LocationProvider>
+      </BlogProvider>
     </ChallengeProvider>
   );
 };
