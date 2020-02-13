@@ -289,13 +289,28 @@ export default class SurveyScreen extends Component {
     }
 
     onSurveyFinished(answers) {
-       // USE THIS SPACE TO GENERATE USER'S ECO-SCORE TO UPDATE ONTO DATABASE
+        // USE HERE TO CALCULATE ECO SCORE FOR EACH USER TO UPDATE USER'S DETAILS ON DATABASE (IN ORDER TO PERSONALISE ECO-CHALLENGES)
 
         const infoQuestionsRemoved = [...answers];
+
         const answersAsObj = {};
         for (const elem of infoQuestionsRemoved) { answersAsObj[elem.questionId] = elem.value; }
 
         this.props.navigation.navigate('SurveyComplete', { surveyAnswers: answersAsObj });
+    }
+
+    onAnswerSubmitted(answer) {
+        this.setState({ answersSoFar: JSON.stringify(this.surveyRef.getAnswers(), 2) });
+        switch (answer.questionId) {
+            // case 'favoriteColor': {
+            //     if (COLORS.includes(answer.value.toLowerCase())) {
+            //         this.setState({ backgroundColor: answer.value.toLowerCase() });
+            //     }
+            //     break;
+            // }
+            default:
+                break;
+        }
     }
 
     renderPreviousButton(onPress, enabled) {
@@ -433,6 +448,7 @@ export default class SurveyScreen extends Component {
                         renderNumericInput={this.renderNumericInput}
                         renderInfo={this.renderInfoText}
                     />
+                    
                 </View>
                 
                 <ScrollView style={styles.answersContainer}>

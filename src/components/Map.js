@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { Text, StyleSheet, ActivityIndicator, Image } from 'react-native';
 import MapView, { Marker, Circle }  from 'react-native-maps';
 import { withNavigation } from 'react-navigation';
 import {Context as LocationContext} from '../context/LocationContext';
@@ -26,43 +26,59 @@ const Map = () => {
             />
             <MapView.Marker
                 coordinate={currentLocation.coords}
-                pinColor='navy'
+                pinColor='green'
                 title={"Your location"}
-            />
+            >
+            <Image style={styles.earthMarker} source={require('../../assets/user-marker.png')}/>
+            </MapView.Marker>
             <MapView.Marker
                 coordinate={{
                     latitude: 53.4539748,
                     longitude: -2.0595142,
                 }}
-                title={"Test Event"}
+                title={"Environmental Talk"}
                 pinColor='green'
-                description={"Environmental Talk 20th February 2020"}
-            />
+                description={"20th February 2020"}
+            >
+             <Image style={styles.earthMarker} source={require('../../assets/earth-marker2.png')}/>
+             </MapView.Marker>
             <MapView.Marker
                 coordinate={{
                     latitude: 53.1421234,
                     longitude: -2.3868803,
                 }}
-                title={"Test Event 2"}
+                title={"Litter Pick"}
                 pinColor='green'
-                description={"Environmental Talk 20th February 2020"}
-            />
+                description={"15th February 2020"}
+            >
+            <Image style={styles.earthMarker} source={require('../../assets/earth-marker2.png')}/>
+            </MapView.Marker>
             <MapView.Marker
                 coordinate={{
                     latitude: 53.6471418,
                     longitude: -2.0595142,
                 }}
-                title={"Test Event 3"}
+                title={"Climate Change Meetup"}
                 pinColor='green'
-                description={"Environmental Talk 20th February 2020"}
-            />
+                description={"31st February 2020"}
+            >
+            <Image style={styles.earthMarker} source={require('../../assets/earth-marker2.png')}/>
+            </MapView.Marker>
         </MapView>
     );
 };
 
 const styles = StyleSheet.create({
     map: {
-        height: 600
+        height: '100%'
+    },
+    earthMarker: {
+        height: 45, 
+        width: 45, 
+        shadowOpacity: 0.5, 
+        shadowRadius: 3, 
+        shadowColor: 'gray', 
+        shadowOffset: { height: 0, width: 0 }
     }
 });
 

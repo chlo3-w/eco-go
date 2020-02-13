@@ -56,8 +56,8 @@ const switchNavigator = createSwitchNavigator({
     Signin: SigninScreen
   }),
   mainFlow: createBottomTabNavigator({
-    blogFlow,
     challengeFlow,
+    blogFlow,
     Event: EventScreen
   })
 });

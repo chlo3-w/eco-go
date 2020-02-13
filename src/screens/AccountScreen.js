@@ -14,7 +14,7 @@ const AccountScreen = () => {
     return (
         <SafeAreaView forceInset={{top:'always'}}>
             <NavigationEvents onWillFocus={fetchEmail}/>
-            <Text></Text>
+            <Text style={styles.textStyle}>Sign Out</Text>
             <Spacer>
             <Button 
                 title="Sign Out"
@@ -25,6 +25,11 @@ const AccountScreen = () => {
     )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    textStyle: {
+        fontSize: 40,
+        paddingLeft: 15
+    }
+});
 
 export default AccountScreen;
