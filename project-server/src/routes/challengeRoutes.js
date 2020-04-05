@@ -14,7 +14,7 @@ router.get('/challenges', async (req, res) => {
 });
 
 router.post('/challenges', async (req, res) => {
-    const { name, description, carbon, water, eScore, category} = req.body;
+    const { name, description, carbon, water, eScore, category,image} = req.body;
 
     // if (!name || !description) {
     //     return res
@@ -22,7 +22,7 @@ router.post('/challenges', async (req, res) => {
     //     .send({error: 'You must provide a name and description'});
     // }
 
-    const challenge = new Challenge({name,description,carbon,water,eScore,category});
+    const challenge = new Challenge({name,description,carbon,water,eScore,category,image});
     await challenge.save();
     res.send(challenge);
 });

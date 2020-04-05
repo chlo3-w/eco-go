@@ -9,12 +9,14 @@ const ChallengeDetailScreen = ({ navigation }) => {
     const _id = navigation.getParam('_id');
     
     const challenge = state.find(c => c._id === _id);
+    const image = challenge.image;
 
     return (
         <View style={{flex:1}}>
             <View style={{flex:1}}>
                 <View style={styles.challengeImage}>
-                    <Image style={styles.image} source={require('../../assets/meatfree.jpg')}/>
+                    <Image style={styles.image} source={{ uri: `${image}` }} />
+                    
                 </View>
                 <View style={styles.challengeText}>
                     <Text style={{ fontSize: 35, fontWeight: '400'}}>{challenge.name}</Text>
@@ -31,13 +33,13 @@ const ChallengeDetailScreen = ({ navigation }) => {
             </View>
             <View style={{flexDirection:'row', padding: 15, marginHorizontal: 10, marginLeft: 0, marginTop: 20}}>
                 <View style={{backgroundColor: '#66b8af', height: 170, width: '50%', alignItems:'center', justifyContent:'center', borderRadius: 30, marginRight: 10}}>
-                    <Text style={{fontSize: 22, padding: 12, textAlign: 'center', fontWeight: '200', color: '#fff'}}>Carbon saving</Text>
-                    <Text style={{fontSize: 22, color:'#fff', fontWeight: '200'}}>{challenge.carbon}</Text>
+                    <Text style={{fontSize: 22, padding: 12, marginTop: -10, textAlign: 'center', fontWeight: '200', color: '#fff'}}>Carbon saving</Text>
+                    <Text style={{fontSize: 22, color:'#fff', fontWeight: '200'}}>{challenge.carbon} kg</Text>
                     <MaterialIcons name="directions-car" size={43} color="#fff"/>
                 </View>
                 <View style={{backgroundColor: '#66b8af', height: 170, width: '50%', alignItems:'center', justifyContent:'center', borderRadius: 30}}>
                     <Text style={{fontSize: 22, padding: 12, textAlign: 'center', fontWeight: '200', color: 'white'}}>Water saving</Text>
-                    <Text style={{fontSize: 22, color:'#fff', fontWeight: '200'}}>{challenge.water}</Text>
+                    <Text style={{fontSize: 22, color:'#fff', fontWeight: '200'}}>{challenge.water} L</Text>
                     <MaterialCommunityIcons name="water" size={43} color="#fff"/>
                 </View>
             </View>
