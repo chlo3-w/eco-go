@@ -21,3 +21,4 @@ export const { Provider, Context } = createDataContext(
   { fetchPosts },
   []
 );
+

@@ -271,11 +271,10 @@ export default class SurveyScreen extends Component {
     static navigationOptions = () => {
         return {
             headerStyle: {
-                backgroundColor: RED,
+                backgroundColor: '#fff',
                 height: 40,
                 elevation: 5,
             },
-            headerTintColor: '#fff',
             headerTitle: 'Survey',
             headerTitleStyle: {
                 flex: 1,
@@ -451,10 +450,10 @@ export default class SurveyScreen extends Component {
                     
                 </View>
                 
-                <ScrollView style={styles.answersContainer}>
+                {/* <ScrollView style={styles.answersContainer}>
                     <Text style={{textAlign:'center'}}>JSON output</Text>
                     <Text>{this.state.answersSoFar}</Text>
-                </ScrollView>
+                </ScrollView> */}
                 
             </View>
         );
@@ -473,17 +472,17 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flex: 1, 
     },
-    answersContainer: {
-        width: '90%',
-        maxHeight: '20%',
-        marginTop: 50,
-        paddingHorizontal: 20,
-        paddingVertical: 10,
-        marginBottom: 20,
-        backgroundColor: 'white',
-        elevation: 20,
-        borderRadius: 10,
-    },
+    // answersContainer: {
+    //     width: '90%',
+    //     maxHeight: '20%',
+    //     marginTop: 50,
+    //     paddingHorizontal: 20,
+    //     paddingVertical: 10,
+    //     marginBottom: 20,
+    //     backgroundColor: 'white',
+    //     elevation: 20,
+    //     borderRadius: 10,
+    // },
     surveyContainer: {
         minWidth: '90%',
         width: 'auto',
@@ -495,6 +494,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 5,
         alignContent: 'center',
         padding: 15,
+        marginTop: -200,
         flexGrow: 0,
     },
     selectionGroupContainer: {

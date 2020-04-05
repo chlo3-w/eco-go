@@ -16,6 +16,10 @@ const blogSchema = new mongoose.Schema({
     category: {
         type: String,
         default: ''
+    },
+    image: {
+        type: String,
+        default: ''
     }
 });
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Spacer from './Spacer';
 import { withNavigation } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 
 const NavLink = ({navigation, text, routeName}) => {
@@ -12,6 +14,12 @@ const NavLink = ({navigation, text, routeName}) => {
             >
                 <Text style={styles.link}>
                     {text}
+                
+                <Icon
+                    name='chevron-right'
+                    size={10}
+                    color='#fff'
+                />
                 </Text>
             </TouchableOpacity>
         </>
@@ -20,7 +28,7 @@ const NavLink = ({navigation, text, routeName}) => {
 
 const styles = StyleSheet.create({
     link: {
-        color: 'blue',
+        color: 'white',
         marginHorizontal: 15,
         marginTop: 5
     }

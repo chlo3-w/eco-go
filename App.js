@@ -13,7 +13,7 @@ import SignupScreen from './src/screens/SignupScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import blogPostScreen from './src/screens/BlogPostScreen';
 import SurveyScreen from './src/screens/SurveyScreen';
-//import SurveyScreenComplete from './src/screens/SurveyScreenComplete';
+import SurveyComplete from './src/screens/SurveyScreenComplete';
 import LoadingScreen from './src/screens/LoadingScreen';
 import { setNavigator } from './src/navigationRef';
 import { Provider as AuthProvider } from './src/context/authContext';
@@ -21,6 +21,7 @@ import { Provider as LocationProvider } from './src/context/LocationContext';
 import { Provider as ChallengeProvider } from './src/context/challengeContext';
 import { Provider as BlogProvider } from './src/context/blogContext';
 import { Feather } from '@expo/vector-icons';
+import { SimpleSurvey } from 'react-native-simple-survey';
 
 const challengeFlow = createStackNavigator({
       ChallengeList: ChallengeListScreen,
@@ -28,7 +29,7 @@ const challengeFlow = createStackNavigator({
       Help: HelpScreen,
       Account: AccountScreen,
       Survey: SurveyScreen,
-      // SurveyComplete: SurveyCompleteScreen
+      SurveyComplete: SurveyComplete
 });
 
 const blogFlow = createStackNavigator({
@@ -58,7 +59,7 @@ const switchNavigator = createSwitchNavigator({
   mainFlow: createBottomTabNavigator({
     challengeFlow,
     blogFlow,
-    Event: EventScreen
+    Events: EventScreen
   })
 });
 

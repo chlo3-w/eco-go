@@ -1,3 +1,4 @@
+import React from 'react';
 import { AsyncStorage } from 'react-native';
 import createDataContext from './createDataContext';
 import axiosApi from '../api/axiosApi';
@@ -16,7 +17,7 @@ const authReducer = (state, action) => {
         case 'fetch_details':
             return action.payload;
         case 'fetch_email':
-            return action.payload;
+            return state;
         default:
             return state;
     }
@@ -50,7 +51,7 @@ const signup = (dispatch) => async ({email, password}) => {
 const signin = dispatch => async ({email, password}) => {
         try {
             const response = await axiosApi.post('/signin', {email,password});
-            await AsyncStorage.setItem('email', JSON.stringify(email));
+            await AsyncStorage.setItem('email', email);
             await AsyncStorage.setItem('token', response.data.token);
             dispatch({ type: 'signin', payload: response.data.token});
             navigate('challengeFlow');
@@ -59,7 +60,7 @@ const signin = dispatch => async ({email, password}) => {
         } catch (err) {
             dispatch({
                 type: 'add_error',
-                payload: "Oops! Something went wrong with sign in :("
+                payload: "Oops, that doesn't seem right! Try again"
             })
         }
     };
@@ -71,7 +72,9 @@ const signout = dispatch => async () => {
 };
 
 const fetchEmail = dispatch => async () => {
-    await AsyncStorage.getItem('email');
+    const userDetail = await AsyncStorage.getItem('email');
+    console.log(userDetail);
+    // return user;
     dispatch({ type: 'fetch_email'});
 };
 

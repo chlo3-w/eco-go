@@ -14,8 +14,8 @@ router.get('/posts', async (req, res) => {
 });
 
 router.post('/posts', async (req, res) => {
-    const { title, url, author, category} = req.body;
-    const posts = new Blog({title,url,author,category});
+    const { title, url, author, category, image} = req.body;
+    const posts = new Blog({title,url,author,category, image});
     await posts.save();
     res.send(posts);
 });

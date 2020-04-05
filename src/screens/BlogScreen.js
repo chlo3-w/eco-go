@@ -1,15 +1,16 @@
 import React, {useContext} from 'react';
-import { View, StyleSheet, FlatList, Button, TouchableOpacity} from 'react-native';
+import { View, StyleSheet, FlatList, Button, TouchableOpacity, Image} from 'react-native';
 // import {WebView} from 'react-native-webview';
 import { SafeAreaView } from 'react-navigation';
 import { NavigationEvents } from 'react-navigation';
-import { ListItem, Text } from 'react-native-elements';
+import { ListItem, Text, Avatar } from 'react-native-elements';
 import { Feather } from '@expo/vector-icons';
 import  { Context as BlogContext} from '../context/blogContext';
 import Spacer from '../components/Spacer';
 
 const BlogScreen = ({ navigation }) => {
     const { state, fetchPosts } = useContext(BlogContext);
+
     return (
         <SafeAreaView forceInset={{top:'always'}} style={styles.container}>
             <NavigationEvents onWillFocus={fetchPosts}/>
@@ -51,7 +52,7 @@ const BlogScreen = ({ navigation }) => {
                         return (
                             <View>
                                 <TouchableOpacity onPress={() => navigation.navigate('BlogPost', {_id: item._id})}>
-                                    <ListItem containerStyle={{backgroundColor: '#66b8af', height: 110, marginBottom: 20, borderRadius: 12}} style={styles.post} chevron chevron={{ color: 'white' }} title={item.title} titleStyle={{ color: 'white', fontSize: 18, fontWeight:'bold'}} subtitle={item.author} subtitleStyle={{color: 'white', fontSize: 13, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'large', rounded: false, source:require('../../assets/travel.jpg')}} />
+                                 <ListItem containerStyle={{backgroundColor: '#66b8af', height: 110, marginBottom: 20, borderRadius: 12}} style={styles.post} chevron chevron={{ color: 'white' }} title={item.title} titleStyle={{ color: 'white', fontSize: 18, fontWeight:'bold'}} subtitle={item.author} subtitleStyle={{color: 'white', fontSize: 13, paddingTop: 5, fontWeight:'200'}} leftAvatar={{rounded:false, size: 'large', source:{uri:`${item.image}`}}}/>
                                 </TouchableOpacity>
                             </View>
                             )
