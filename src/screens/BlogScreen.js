@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { View, StyleSheet, FlatList, Button, TouchableOpacity, Image} from 'react-native';
+import { View, StyleSheet, FlatList, Button, TouchableOpacity, Image, ImageBackground} from 'react-native';
 // import {WebView} from 'react-native-webview';
 import { SafeAreaView } from 'react-navigation';
 import { NavigationEvents } from 'react-navigation';
@@ -14,8 +14,8 @@ const BlogScreen = ({ navigation }) => {
     return (
         <SafeAreaView forceInset={{top:'always'}} style={styles.container}>
             <NavigationEvents onWillFocus={fetchPosts}/>
-                <Text h2 style={styles.headerStyle}>Blog</Text>
-                <Spacer />
+            <ImageBackground source={require('../../assets/blog-bg2.png')} style={styles.backgroundImage}>
+                <Text h3 style={styles.headerStyle}>Blog</Text>
                 <View style={styles.filter}>
                     <ListItem 
                         containerStyle={{backgroundColor: '#66b8af', height: 50}}
@@ -45,7 +45,9 @@ const BlogScreen = ({ navigation }) => {
                         />
                 </View>
                 <Spacer />
+                <Spacer />
                 <FlatList
+                    style={styles.blogPost}
                     data={state}
                     keyExtractor={item => item._id}
                     renderItem={({item}) => {
@@ -58,6 +60,7 @@ const BlogScreen = ({ navigation }) => {
                             )
                         }}
                 />
+                </ImageBackground>
         </SafeAreaView>
     )
 };
@@ -71,12 +74,14 @@ BlogScreen.navigationOptions = {
 const styles = StyleSheet.create({
 container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#22796f',
     justifyContent: 'center'
 },
 headerStyle: {
-    marginTop: 20,
-    paddingLeft: 15
+    color: 'white',
+    paddingLeft: 15,
+    paddingTop: 5,
+    paddingBottom: 10,
 },
 filterContainer: {
     width: 160,
@@ -93,6 +98,17 @@ filter: {
 post: {
     width: '92%',
     marginHorizontal: 13
+},
+backgroundImage: {
+    flex: 1,
+    width: null,
+    height: null,
+    // marginTop: 250,
+    // // marginHorizontal: 25,
+    // position: 'absolute'
+},
+blogPost: {
+    marginTop: 55
 }
 });
 
