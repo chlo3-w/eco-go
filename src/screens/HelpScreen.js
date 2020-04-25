@@ -32,6 +32,12 @@ const HelpScreen = ({ navigation }) => {
                             The application aim is to encourage sustainable living and positive environmental impact through tailored, habit-forming eco-challenges, education and citizen engagement.
                         </Text>
                         <Spacer />
+                        <Text h5 style={styles.bodyStyle}>Are you seeing an impact to operations because of the COVID-19 pandemic?</Text>
+                        <Text h5 style={styles.answerStyle}>
+                            Whilst COVID-19 will not affect the overall running of the application, there will be less events available to users during the pandemic. 
+                            When the government outlines that mass gatherings and events are once again safe to go ahead, we will ensure that events are once again fully listed within the application.
+                        </Text>
+                        <Spacer />
                         <Text h5 style={styles.bodyStyle}>How do you engage users?</Text>
                         <Text h5 style={styles.answerStyle}>
                             Engaging people to become more sustainable, and do so for an extended period of time is challenging. 
@@ -41,8 +47,8 @@ const HelpScreen = ({ navigation }) => {
                         <Spacer />
                         <Text h5 style={styles.bodyStyle}>What are your challenges based on?</Text>
                         <Text h5 style={styles.answerStyle}>
-                            Every challenge that we offer our users has been scientifically backed to help reduce our overall environmental impact. 
-                            We are following guidance and research outlined by similar environmental applications to ensure reliability and accuracy of our challenges.
+                            Every challenge that we offer our users has been scientifically backed to help reduce our overall environmental impact and we use tools such as the Environmental Protection Agency's Greenhouse Gas Equivalencies Calculator to create precise yearly impact calculations. 
+                            We follow guidance and research outlined by similar environmental websites and applications to ensure reliability and accuracy of our challenges. 
                         </Text>
                         <Spacer />
                         <Text h5 style={styles.bodyStyle}>How do you manage user data?</Text>

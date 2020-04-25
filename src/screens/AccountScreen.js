@@ -5,8 +5,9 @@ import { AsyncStorage } from 'react-native';
 import { Button } from 'react-native-elements';
 import { SafeAreaView } from 'react-navigation';
 import { NavigationEvents } from 'react-navigation';
-import { Ionicons} from '@expo/vector-icons';
+import { Ionicons, MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 import Spacer from '../components/Spacer';
+import SwitchToggle from '../components/Switch';
 import { Context as authContext } from '../context/authContext';
 
 
@@ -35,14 +36,36 @@ const AccountScreen = ({ navigation }) => {
                     <View style={styles.hairline} />
                     <Text h5 style={styles.bodyStyle}>Email</Text>
                     <View style={styles.hairline} />
-                    <Text h5 style={styles.textStyle}>Notifications</Text>
-                    <Text h5 style={styles.textStyle}>Language</Text>
-                    <Text h5 style={styles.textStyle}>Help</Text>
+                    {/* <Text h5 style={styles.textStyle}>Notifications</Text> */}
                 </View>
-
-
-
-            <Text style={styles.textStyle}>Sign Out</Text>
+                <View style={styles.horizontalBar}>
+                    <View style={styles.leftText}>
+                        <Text h5 style={styles.textStyle}>Notifications</Text>
+                    </View>
+                    <View style={styles.rightSwitch}>
+                        <SwitchToggle />
+                    </View>  
+                </View>
+                <View style={styles.horizontalBar}>
+                    <View style={styles.leftText}>
+                        <Text h5 style={styles.textStyle}>Language</Text>
+                    </View>
+                    <View style={styles.rightText}>
+                        <Text h5 style={styles.subtextStyle}>English</Text>
+                    </View>  
+                </View>
+                <TouchableOpacity onPress={() => navigation.navigate('Help')}>
+                    <View style={styles.horizontalBar}>
+                        <View style={styles.horizontalText}>
+                            <Text h5 style={styles.textStyle}>Help</Text>
+                        </View>
+                        <View style={styles.horizontalIcon}>
+                            <Ionicons style={styles.settings} underlayColor="#ffffff00" name="ios-arrow-forward" size={24} color="#FEFEFE" onPress={() => navigation.navigate('Help')}/>
+                        </View>  
+                    </View>
+                </TouchableOpacity>
+            <Spacer />
+            
             <Spacer>
             <Text style={{ fontSize: 35, fontWeight: '400'}}></Text>
             <Button 
@@ -130,6 +153,53 @@ const styles = StyleSheet.create({
         borderWidth: 5,
         borderRadius: 10,
     },
+    horizontalBar: {
+        backgroundColor: 'transparent',
+        flexDirection:'row', 
+        marginHorizontal: 10, 
+        marginLeft: 0, 
+    },
+    settings: {
+        backgroundColor: 'transparent',
+        marginRight: 15
+    },
+    horizontalText: {
+        width: '88%', 
+        justifyContent:'center', 
+        marginRight: 10
+    },
+    horizontalIcon: {
+        width: '12%', 
+        alignItems:'center', 
+        justifyContent:'center', 
+        marginTop: 30
+    },
+    leftText:{
+        width: '60%', 
+        justifyContent:'center', 
+        marginRight: 20
+    },
+    rightText:{ 
+        // backgroundColor: 'blue',
+        width: '40%', 
+        alignItems:'center', 
+        justifyContent:'center', 
+    },
+    rightSwitch: {
+        width: '40%', 
+        alignItems:'center', 
+        justifyContent:'center', 
+        marginTop: 30,
+        marginLeft: 15
+    },
+    subtextStyle: {
+        marginTop: 30,
+        paddingLeft: 15,
+        fontWeight: '300',
+        fontSize: 18,
+        color: 'white',
+    },
+
 });
 
 export default AccountScreen;
