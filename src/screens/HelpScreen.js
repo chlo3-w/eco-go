@@ -12,7 +12,7 @@ const HelpScreen = ({ navigation }) => {
                 <View style={styles.titleBar}>
                     <TouchableOpacity>
                         <View>
-                            <Ionicons style={styles.help} underlayColor="#ffffff00" name="ios-arrow-back" size={24} color="#FEFEFE" onPress={() => navigation.navigate('ChallengeList')}/>
+                            <Ionicons style={styles.back} underlayColor="#ffffff00" name="ios-arrow-back" size={24} color="#FEFEFE" onPress={() => navigation.navigate('ChallengeList')}/>
                         </View>
                     </TouchableOpacity>
                 </View>    
@@ -75,23 +75,26 @@ const styles = StyleSheet.create({
         marginTop: 30,
         paddingLeft: 15,
         fontWeight: '600',
-        fontSize: 18
+        fontSize: 18,
+        color: 'white',
     },
     bodyStyle: {
         fontSize: 20,
         paddingLeft: 15,
+        color: 'white',
     },
     answerStyle: {
         paddingTop: 10,
         paddingLeft: 15,
         paddingRight: 15,
-        fontWeight: '200'
+        fontWeight: '200',
+        color: 'white',
     },
     helpText: {
         marginTop: 10,
         padding: 5
     },
-    help: {
+    back: {
         backgroundColor: 'transparent',
         padding: 5,
     },
