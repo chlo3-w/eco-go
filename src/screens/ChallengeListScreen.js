@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-navigation';
 import { NavigationEvents } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
 import { Context as ChallengeContext } from '../context/challengeContext';
+import Chart from '../components/Chart';
 import Spacer from '../components/Spacer';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -63,7 +64,10 @@ const ChallengeListScreen = ({ navigation }) => {
             <View style={{ flex: 1, marginTop: -110 }}>
                 <Text h5 style={{padding:10, paddingLeft: 15, fontWeight: '400', textAlign: 'center', color: '#FEFEFE'}}>Track your impact</Text>
                     <View style={styles.chart}>
-                        <Text h5 style={{padding:10, color: 'white', fontWeight: 'bold', textAlign: 'center'}}>Chart</Text>
+                    {/* <View>
+                        <Text h5 style={{padding:10, marginTop:18, color: 'white', opacity: 0.5, fontWeight: '200', position:'absolute', fontSize: 10}}>Carbon saved • Water saved</Text>
+                    </View> */}
+                        <Chart />
                     </View>
             </View>
             <View>
