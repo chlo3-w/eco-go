@@ -1,41 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { View, StyleSheet, Button, FlatList, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import React, { useContext } from 'react';
+import { View, StyleSheet, FlatList, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Text } from 'react-native-elements';
 import { SafeAreaView } from 'react-navigation';
 import { NavigationEvents } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
 import { Context as ChallengeContext } from '../context/challengeContext';
 import Spacer from '../components/Spacer';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-
-// // FONTS
-// import * as Font from 'expo-font';
-// import { AppLoading } from 'expo';
-
-// const fetchFonts = () => {
-// return Font.loadAsync({
-//   'montserrat-semibold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
-//   'montserrat-medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-//   'montserrat-bold': require('./assets/fonts/Montserrat-Bold.ttf')
-// });
-// };
-
-// //
+import { Ionicons } from '@expo/vector-icons';
 
 
 const ChallengeListScreen = ({ navigation }) => {
-    // const [dataLoaded, setDataLoaded] = useState(false);
+    //FETCH CHALLENGES
     const { state, fetchChallenges } = useContext(ChallengeContext);  
-    // const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80];
-
-    // if (!dataLoaded) {
-    //     return (
-    //         <AppLoading
-    //         startAsync={fetchFonts}
-    //         onFinish={() => setDataLoaded(true)}
-    //         />
-    //     );
-    // }
 
     return (
     <SafeAreaView forceInset={{top:'always'}} style={styles.container}>
@@ -102,7 +78,7 @@ const ChallengeListScreen = ({ navigation }) => {
                     </View>
                 </TouchableOpacity>
             </View>
-            </ImageBackground>
+        </ImageBackground>
     </SafeAreaView>
     )
 };
@@ -121,8 +97,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#FEFEFE',
         fontSize: 24,
-        // padding: 10
-        
     },
     textStyleBrand: {
         textAlign: 'center',
@@ -185,9 +159,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-        // marginTop: 250,
-        // // marginHorizontal: 25,
-        // position: 'absolute'
     },
     hairline: {
         backgroundColor: '#FEFEFE',

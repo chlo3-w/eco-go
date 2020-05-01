@@ -17,6 +17,14 @@ const challengeSchema = new mongoose.Schema({
         type: Number,
         default: ''
     },
+    trees: {
+        type: Number,
+        default: ''
+    },
+    bottles: {
+        type: Number,
+        default: ''
+    },
     eScore: {
         type: Number,
         default: ''
