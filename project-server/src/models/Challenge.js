@@ -9,6 +9,10 @@ const challengeSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    week: {
+        type: Number,
+        default: ''
+    },
     carbon: {
         type: Number,
         default: ''

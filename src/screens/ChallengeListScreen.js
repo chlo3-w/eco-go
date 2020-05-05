@@ -35,8 +35,11 @@ const ChallengeListScreen = ({ navigation }) => {
                     <Image source={require('../../assets/avatar2.png')} style={styles.image} resizeMode="center"/>
                 </View>
             </View>
-            <Text style={styles.textStyleBrand}>eco:go</Text>
-            <Text style={styles.textStyleTitle}>hello, Chloe!</Text>
+            <View style={styles.logoImage}>
+            {/* <Text style={styles.textStyleBrand}>eco:go</Text> */}
+            <Image source={require('../../assets/logo2.png')} style={styles.logo} resizeMode="center"/>
+            {/* <Text style={styles.textStyleTitle}>hello, Chloe!</Text> */}
+            </View>
             <Text h5 style={styles.textStyleHead}>Overview</Text>
             <View style={styles.hairline} />
             <Spacer />
@@ -119,6 +122,12 @@ const styles = StyleSheet.create({
         width: undefined,
         height: undefined,
     },
+    logo: {
+        flex: 1,
+        width: undefined,
+        height: undefined,
+        marginTop: 12
+    },
     titleBar: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -141,7 +150,13 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 500,
         overflow: 'hidden',
-        justifyContent: 'center'
+        justifyContent: 'center',
+    },
+    logoImage: {
+        width: '100%',
+        height: 70,
+        overflow: 'hidden',
+        justifyContent: 'center',
     },
     challengeContainer: {
         width: 240,

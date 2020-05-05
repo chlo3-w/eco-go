@@ -14,15 +14,9 @@ router.get('/challenges', async (req, res) => {
 });
 
 router.post('/challenges', async (req, res) => {
-    const { name, description, carbon, water, trees, bottles, eScore, category, image} = req.body;
+    const { name, description, week, carbon, water, trees, bottles, eScore, category, image} = req.body;
 
-    // if (!name || !description) {
-    //     return res
-    //     .status(422)
-    //     .send({error: 'You must provide a name and description'});
-    // }
-
-    const challenge = new Challenge({name,description,carbon,water,trees,bottles,eScore,category,image});
+    const challenge = new Challenge({name,description,week,carbon,water,trees,bottles,eScore,category,image});
     await challenge.save();
     res.send(challenge);
 });

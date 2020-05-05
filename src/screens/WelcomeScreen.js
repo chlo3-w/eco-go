@@ -1,30 +1,31 @@
 import React from 'react';
-import { View, StyleSheet, Text, ImageBackground } from 'react-native';
+import { View, StyleSheet, Text, ImageBackground, Image } from 'react-native';
 import { Button } from 'react-native-elements';
 import Spacer from '../components/Spacer';
 
 const WelcomeScreen = ({navigation}) => {
     return (
         <ImageBackground source={require('../../assets/signin-bg.png')} style={styles.container}>
-        <View style={styles.headerText}>
-            <Text style={{ fontSize: 78, color: '#fff'}}>eco:go</Text>
-            <Spacer />
-            <Text style={{ fontSize: 28, color: '#fff'}}>Your sustainable future starts <Text style={{ textDecorationLine: 'underline'}}>right now.</Text></Text>
-            <Spacer />
+            <View style={styles.headerText}>
+                {/* <Text style={{ fontSize: 78, color: '#fff'}}>eco:go</Text> */}
+                <Image source={require('../../assets/logo.png')} style={styles.image} resizeMode="center"/>
+                <Spacer />
+                <Text style={{ fontSize: 28, color: '#fff', marginTop: -90}}>Your sustainable future starts <Text style={{ textDecorationLine: 'underline'}}>right now.</Text></Text>
+                <Spacer />
             </View>
             <View style={styles.options}>
-                <Button 
-                    buttonStyle={styles.button1}
-                    title="Get Started"
-                    onPress={() => navigation.navigate('Signup')}
-                />
-                {/* <Spacer /> */}
-                <Button 
-                    buttonStyle={styles.button2}
-                    title="Sign in"
-                    titleStyle={{color: '#22796f'}}
-                    onPress={() => navigation.navigate('Signin')}
-                />
+                    <Button 
+                        buttonStyle={styles.button1}
+                        title="Get Started"
+                        onPress={() => navigation.navigate('Signup')}
+                    />
+                    {/* <Spacer /> */}
+                    <Button 
+                        buttonStyle={styles.button2}
+                        title="Sign in"
+                        titleStyle={{color: '#22796f'}}
+                        onPress={() => navigation.navigate('Signin')}
+                    />
             </View>
         </ImageBackground>
     );
@@ -41,9 +42,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-        // marginTop: 250,
-        // // marginHorizontal: 25,
-        // position: 'absolute'
     },
     options: {
         flex: 1,
@@ -54,7 +52,7 @@ const styles = StyleSheet.create({
     },
     headerText: {
         flex: 1,
-        marginTop: 280,
+        marginTop: 185,
         marginHorizontal: 25,
     },
     button1: {
@@ -69,7 +67,15 @@ const styles = StyleSheet.create({
         borderColor: '#fff',
         borderWidth: 5,
         borderRadius: 10,
-    }
+    },
+    image: {
+        marginTop: -70,
+        flex: 1,
+        marginRight: 87,
+        marginBottom: -130,
+        width: undefined,
+        height: 100,
+    },
 
 });
 
