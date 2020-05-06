@@ -36,23 +36,23 @@ const Map = () => {
             </MapView.Marker>
             <MapView.Marker
                 coordinate={{
-                    latitude: 53.4539748,
-                    longitude: -2.0595142,
+                    latitude: 53.4789339,
+                    longitude: -2.2486066,
                 }}
                 title={"Environmental Talk"}
                 pinColor='green'
-                description={"20th February 2020"}
+                description={"29th July 2020"}
             >
              <Image style={styles.earthMarker} source={require('../../assets/earth-marker2.png')}/>
              </MapView.Marker>
             <MapView.Marker
                 coordinate={{
-                    latitude: 53.1421234,
-                    longitude: -2.3868803,
+                    latitude: 53.3104672,
+                    longitude: -3.8136738,
                 }}
                 title={"Litter Pick"}
                 pinColor='green'
-                description={"15th February 2020"}
+                description={"14th July 2020"}
             >
             <Image style={styles.earthMarker} source={require('../../assets/earth-marker2.png')}/>
             </MapView.Marker>
@@ -64,16 +64,16 @@ const Map = () => {
                 }}
                 title={"Climate Change Meetup"}
                 pinColor='green'
-                description={"31st February 2020"}
+                description={"12th September 2020"}
             >
             <Image style={styles.earthMarker} source={require('../../assets/earth-marker2.png')}/>
             </MapView.Marker>
         </MapView>
         <View style={{ backgroundColor: 'white', flex: 1, justifyContent: 'flex-end'}}>
             <ScrollView horizontal={true} style={{ marginTop: -170}}>
-                <ListItem underlayColor="transparent" style={styles.container} title="Litter Pick" containerStyle={{ height: 100, marginBottom: 20, borderRadius: 12, borderColor:'lightgray', borderBottomWidth: 0.5, backgroundColor: '#e96d64'}} titleStyle={{ color: 'white', fontSize: 18}} subtitle='15th February, Sandbach' subtitleStyle={{color: 'white', fontSize: 13, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'medium', source:require('../../assets/earth2.png')}} onPress = {() => _mapView.animateToRegion({latitude: 53.1421234, longitude: -2.3868803}, 1000)} />
-                <ListItem underlayColor="transparent" style={styles.container} title="Environmental Talk" containerStyle={{ height: 100, marginBottom: 20, borderRadius: 12, borderColor:'lightgray', borderBottomWidth: 0.5, backgroundColor: '#e96d64'}} titleStyle={{ color: 'white', fontSize: 18}} subtitle="20th February, Hyde" subtitleStyle={{color: 'white', fontSize: 13, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'medium', source:require('../../assets/earth2.png')}} onPress = {() => _mapView.animateToRegion({latitude: 53.4539748, longitude: -2.0595142}, 1000)}/>
-                <ListItem underlayColor="transparent" style={styles.container} title="Climate Change Meetup" containerStyle={{ height: 100, marginBottom: 20, borderRadius: 12, borderColor:'lightgray', borderBottomWidth: 0.5, backgroundColor: '#e96d64'}} titleStyle={{ color: 'white', fontSize: 18}} subtitle="31st February, Littleborough" subtitleStyle={{color: 'white', fontSize: 13, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'medium', source:require('../../assets/earth2.png')}} onPress = {() => _mapView.animateToRegion({latitude: 53.6471418, longitude: -2.0595142}, 1000)}/>
+                <ListItem underlayColor="transparent" style={styles.container} title="Litter Pick Event" containerStyle={{ height: 100, marginBottom: 20, borderRadius: 12, borderColor:'lightgray', borderBottomWidth: 0.5, backgroundColor: '#e96d64'}} titleStyle={{ color: 'white', fontSize: 17}} subtitle='14th July, Colwyn Bay' subtitleStyle={{color: 'white', fontSize: 15, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'medium', source:require('../../assets/earth2.png')}} onPress = {() => _mapView.animateToRegion({latitude: 53.3104672, longitude: -3.8136738}, 1000)} />
+                <ListItem underlayColor="transparent" style={styles.container} title="Environmental Talk" containerStyle={{ height: 100, marginBottom: 20, borderRadius: 12, borderColor:'lightgray', borderBottomWidth: 0.5, backgroundColor: '#e96d64'}} titleStyle={{ color: 'white', fontSize: 17}} subtitle="29th July, Manchester Town Hall" subtitleStyle={{color: 'white', fontSize: 15, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'medium', source:require('../../assets/earth2.png')}} onPress = {() => _mapView.animateToRegion({latitude: 53.4789339, longitude: -2.2486066}, 1000)}/>
+                <ListItem underlayColor="transparent" style={styles.container} title="Climate Protest" containerStyle={{ height: 100, marginBottom: 20, borderRadius: 12, borderColor:'lightgray', borderBottomWidth: 0.5, backgroundColor: '#e96d64'}} titleStyle={{ color: 'white', fontSize: 17}} subtitle="12th September, Littleborough" subtitleStyle={{color: 'white', fontSize: 15, paddingTop: 5, fontWeight:'200'}} leftAvatar={{size: 'medium', source:require('../../assets/earth2.png')}} onPress = {() => _mapView.animateToRegion({latitude: 53.6471418, longitude: -2.0595142}, 1000)}/>
             </ScrollView>
         </View>
         </>

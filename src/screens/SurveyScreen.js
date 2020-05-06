@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { StyleSheet, Button, ScrollView, TextInput, View } from 'react-native';
+import { StyleSheet, Button, ScrollView, TextInput, View, TouchableOpacity } from 'react-native';
 import { SimpleSurvey } from 'react-native-simple-survey';
 import { ListItem, Text } from 'react-native-elements';
+import { Ionicons, MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 
 
 const GREEN = 'rgba(102,184,175,1)';
 const RED = 'rgba(233,109,100,1)';
+const WHITE = 'rgba(255,255,255,1)';
 
 const survey = [
     {
         questionType: 'Info',
-        questionText: 'Welcome to the eco:go survey!\n\nWe want you to enjoy a fully personlised app experience and to do this we would like to ask you some questions.',
+        questionText: 'Welcome to the Survey!\n\nWe want you to enjoy a fully personlised app experience and to do this we would like to ask you some questions.',
     },
     {
         questionType: 'NumericInput',
@@ -31,19 +33,19 @@ const survey = [
         options: [
             {
                 optionText: 'Meat in most meals',
-                value: 40
+                value: 'Meat'
             },
             {
                 optionText: 'Meat rarely in meals',
-                value: 30
+                value: 'Meat'
             }, 
             {
                 optionText: 'Vegetarian',
-                value: 'vegetarian'
+                value: 'Vegetarian'
             }, 
             {
                 optionText: 'Vegan',
-                value: 'vegan'
+                value: 'Vegan'
             }
         ]
     },
@@ -111,19 +113,19 @@ const survey = [
         options: [
             {
                 optionText: 'Car',
-                value: 40
+                value: 'Car'
             },
             {
                 optionText: 'Motorbike',
-                value: 30
+                value: 'Motorbike'
             },
             {
                 optionText: 'Public Transport',
-                value: 20
+                value: 'Public Transport'
             },
             {
                 optionText: 'Walk / Cycle',
-                value: 10
+                value: 'Walk / Cycle'
             }
         ]
     },{
@@ -278,7 +280,8 @@ export default class SurveyScreen extends Component {
             headerTitle: 'Survey',
             headerTitleStyle: {
                 flex: 1,
-            }
+            },
+            header: null,
         };
     }
 
@@ -314,12 +317,13 @@ export default class SurveyScreen extends Component {
 
     renderPreviousButton(onPress, enabled) {
         return (
-            <View style={{ flexGrow: 1, maxWidth: 100, marginTop: 10, marginBottom: 10 }}>
+            <View style={{ justifyContent: 'center', flexDirection:'row', width:'100%', marginTop: 20, marginBottom: 5, backgroundColor:'#e96d64',borderWidth: 5,
+            borderRadius: 10,borderColor: '#e96d64' }}>
                 <Button
-                    color={RED}
+                    color={WHITE}
                     onPress={onPress}
                     disabled={!enabled}
-                    backgroundColor={RED}
+                    backgroundColor={WHITE}
                     title={'Previous'}
                 />
             </View>
@@ -328,8 +332,10 @@ export default class SurveyScreen extends Component {
 
     renderNextButton(onPress, enabled) {
         return (
-            <View style={{ flexGrow: 1, maxWidth: 100, marginTop: 10, marginBottom: 10 }}>
+            <View style={{ justifyContent: 'center', flexDirection:'row', width:'100%', marginTop: 5, marginBottom: 5, backgroundColor:'#fff',borderWidth: 5,
+            borderRadius: 10,borderColor: '#fff' }}>
                 <Button
+                    style={styles.buttonNext}
                     color={RED}
                     onPress={onPress}
                     disabled={!enabled}
@@ -342,7 +348,8 @@ export default class SurveyScreen extends Component {
 
     renderFinishedButton(onPress, enabled) {
         return (
-            <View style={{ flexGrow: 1, maxWidth: 100, marginTop: 10, marginBottom: 10 }}>
+            <View style={{ justifyContent: 'center', flexDirection:'row', width:'100%', marginTop: 5, marginBottom: 5, backgroundColor:'#fff',borderWidth: 5,
+            borderRadius: 10,borderColor: '#fff'}}>
                 <Button
                     title={'Finished'}
                     onPress={onPress}
@@ -372,7 +379,7 @@ export default class SurveyScreen extends Component {
 
     renderQuestionText(questionText) {
         return (
-            <View style={{ marginLeft: 10, marginRight: 10 }}>
+            <View style={{ marginLeft: 10, marginRight: 10}}>
                 <Text numLines={4} style={styles.questionText}>{questionText}</Text>
             </View>
         );
@@ -428,6 +435,17 @@ export default class SurveyScreen extends Component {
     render() {
         return (
             <View style={[styles.background, { backgroundColor: this.state.backgroundColor }]}>
+             <View style={styles.titleBar}>
+                    <TouchableOpacity>
+                        <View>
+                            <Ionicons style={styles.back} underlayColor="#ffffff00" name="ios-arrow-back" size={24} color="#FEFEFE" onPress={() => {this.props.navigation.navigate('ChallengeList');}}/>
+                        </View>
+                    </TouchableOpacity>
+                    <Text h3 style={styles.headerStyle}>Survey</Text>
+                </View> 
+                {/* <View style={styles.headerContainer}>
+                <Text h3 style={styles.headerStyle}>Settings</Text>
+                </View> */}
                 <View style={styles.container}>
                     <SimpleSurvey
                         ref={(s) => { this.surveyRef = s; }}
@@ -435,7 +453,7 @@ export default class SurveyScreen extends Component {
                         renderSelector={this.renderButton.bind(this)}
                         containerStyle={styles.surveyContainer}
                         selectionGroupContainerStyle={styles.selectionGroupContainer}
-                        navButtonContainerStyle={{ flexDirection: 'row', justifyContent: 'space-around' }}
+                        navButtonContainerStyle={{ flexDirection: 'column', justifyContent: 'flex-end' }}
                         renderPrevious={this.renderPreviousButton.bind(this)}
                         renderNext={this.renderNextButton.bind(this)}
                         renderFinished={this.renderFinishedButton.bind(this)}
@@ -467,10 +485,10 @@ const styles = StyleSheet.create({
         maxWidth: '90%',
         alignItems: 'stretch',
         justifyContent: 'center',
-        
         elevation: 20,
         borderRadius: 10,
         flex: 1, 
+        marginTop: -200
     },
     // answersContainer: {
     //     width: '90%',
@@ -487,14 +505,15 @@ const styles = StyleSheet.create({
         minWidth: '90%',
         width: 'auto',
         alignSelf: 'center',
-        backgroundColor: 'white',
+        backgroundColor: '#22796f',
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 5,
         borderTopLeftRadius: 5,
         borderTopRightRadius: 5,
         alignContent: 'center',
         padding: 15,
-        marginTop: -200,
+        marginTop: -100,
+        marginBottom: 250,
         flexGrow: 0,
     },
     selectionGroupContainer: {
@@ -511,13 +530,15 @@ const styles = StyleSheet.create({
     },
     questionText: {
         marginBottom: 20,
-        fontSize: 20
+        fontSize: 20,
+        color: 'white',
+        fontWeight: '300',
+        paddingTop: 20
     },
     category: {
         marginBottom: 20,
         fontSize: 30,
-        backgroundColor: 'blue',
-        color: 'black',
+        color: 'white',
         height: 20
     },
     textBox: {
@@ -528,7 +549,8 @@ const styles = StyleSheet.create({
         padding: 20,
         textAlignVertical: 'top',
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        color: 'white'
     },
     numericInput: {
         borderWidth: 1,
@@ -542,13 +564,41 @@ const styles = StyleSheet.create({
     },
     infoText: {
         marginBottom: 20,
-        fontSize: 20,
-        marginLeft: 10
+        fontSize: 22,
+        marginLeft: 10,
+        color: 'white',
+        fontWeight: '300',
     },
     title: {
         flex: 0.15,
         alignSelf: 'flex-start',
         paddingLeft: 20,
-        paddingBottom: 5
-    }
+        paddingBottom: 5,
+        backgroundColor: 'black'
+    },
+    titleBar: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 0,
+        marginHorizontal: 16,
+        marginTop: 45,
+        marginLeft: -310,
+    },
+    back: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: 'transparent',
+        padding: 5,
+        paddingLeft: 15,
+        paddingRight: -25
+    },
+    headerStyle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        color: 'white',
+        marginRight: -105,
+        marginTop: 38,
+        marginLeft: -20,
+    },
 });
