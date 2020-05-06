@@ -4,7 +4,6 @@ import { SimpleSurvey } from 'react-native-simple-survey';
 import { ListItem, Text } from 'react-native-elements';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 
-
 const GREEN = 'rgba(102,184,175,1)';
 const RED = 'rgba(233,109,100,1)';
 const WHITE = 'rgba(255,255,255,1)';
@@ -291,8 +290,7 @@ export default class SurveyScreen extends Component {
     }
 
     onSurveyFinished(answers) {
-        // USE HERE TO CALCULATE ECO SCORE FOR EACH USER TO UPDATE USER'S DETAILS ON DATABASE (IN ORDER TO PERSONALISE ECO-CHALLENGES)
-
+        // USE THIS SPACE TO CALCULATE ECO SCORE FOR EACH USER TO UPDATE USER'S DETAILS ON DATABASE (IN ORDER TO PERSONALISE ECO-CHALLENGES)
         const infoQuestionsRemoved = [...answers];
 
         const answersAsObj = {};
@@ -435,7 +433,7 @@ export default class SurveyScreen extends Component {
     render() {
         return (
             <View style={[styles.background, { backgroundColor: this.state.backgroundColor }]}>
-             <View style={styles.titleBar}>
+                <View style={styles.titleBar}>
                     <TouchableOpacity>
                         <View>
                             <Ionicons style={styles.back} underlayColor="#ffffff00" name="ios-arrow-back" size={24} color="#FEFEFE" onPress={() => {this.props.navigation.navigate('ChallengeList');}}/>
@@ -443,9 +441,6 @@ export default class SurveyScreen extends Component {
                     </TouchableOpacity>
                     <Text h3 style={styles.headerStyle}>Survey</Text>
                 </View> 
-                {/* <View style={styles.headerContainer}>
-                <Text h3 style={styles.headerStyle}>Settings</Text>
-                </View> */}
                 <View style={styles.container}>
                     <SimpleSurvey
                         ref={(s) => { this.surveyRef = s; }}
@@ -465,14 +460,7 @@ export default class SurveyScreen extends Component {
                         renderNumericInput={this.renderNumericInput}
                         renderInfo={this.renderInfoText}
                     />
-                    
                 </View>
-                
-                {/* <ScrollView style={styles.answersContainer}>
-                    <Text style={{textAlign:'center'}}>JSON output</Text>
-                    <Text>{this.state.answersSoFar}</Text>
-                </ScrollView> */}
-                
             </View>
         );
     }
@@ -490,17 +478,6 @@ const styles = StyleSheet.create({
         flex: 1, 
         marginTop: -200
     },
-    // answersContainer: {
-    //     width: '90%',
-    //     maxHeight: '20%',
-    //     marginTop: 50,
-    //     paddingHorizontal: 20,
-    //     paddingVertical: 10,
-    //     marginBottom: 20,
-    //     backgroundColor: 'white',
-    //     elevation: 20,
-    //     borderRadius: 10,
-    // },
     surveyContainer: {
         minWidth: '90%',
         width: 'auto',

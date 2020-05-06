@@ -32,12 +32,10 @@ const EventScreen = () => {
         Location();
     }, []);
 
-
-
     return (
         <SafeAreaView forceInset={{top:'always'}} style={{ backgroundColor: '#66b8af', flex: 1}}>
             <View style={styles.header}>
-            <Text style={{color: 'white'}} h3>Events</Text>
+                <Text style={{color: 'white'}} h3>Events</Text>
             </View>
             <Map />
             {err ? <Text> Please enable location services to see events near you!</Text> : null}

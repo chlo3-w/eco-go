@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Switch, StyleSheet } from "react-native";
 
+//NOTIFICATION SWITCH ON SETTINGS PAGE
 export default function NotificationSwitch() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);

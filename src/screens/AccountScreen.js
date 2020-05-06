@@ -15,65 +15,62 @@ import { Context as authContext } from '../context/authContext';
 const AccountScreen = ({ navigation }) => {
     const {signout} = useContext(authContext);
     const {fetchEmail} = useContext(authContext);
-    // console.log({fetchEmail});
 
     return (
         <SafeAreaView forceInset={{top:'always'}} style={styles.container}>
-         <ImageBackground source={require('../../assets/settings-bg.png')} style={styles.backgroundImage}>
-            <NavigationEvents onWillFocus={fetchEmail}/>
-            <View style={styles.titleBar}>
-                    <TouchableOpacity>
-                        <View>
-                            <Ionicons style={styles.back} underlayColor="#ffffff00" name="ios-arrow-back" size={24} color="#FEFEFE" onPress={() => navigation.navigate('ChallengeList')}/>
-                        </View>
-                    </TouchableOpacity>
-                </View>    
-                <Text h3 style={styles.headerStyle}>Settings</Text>
-                <View style={styles.textContainer}>
-                    <Text h5 style={styles.textStyle}>Personal Details</Text>
-                    <View style={styles.hairline} />
-                    <Text h5 style={styles.bodyStyle}>Name</Text>
-                    <View style={styles.hairline} />
-                    <Text h5 style={styles.bodyStyle}>Email</Text>
-                    <View style={styles.hairline} />
-                    {/* <Text h5 style={styles.textStyle}>Notifications</Text> */}
-                </View>
-                <View style={styles.horizontalBar}>
-                    <View style={styles.leftText}>
-                        <Text h5 style={styles.textStyle}>Notifications</Text>
+            <ImageBackground source={require('../../assets/settings-bg.png')} style={styles.backgroundImage}>
+                <NavigationEvents onWillFocus={fetchEmail}/>
+                <View style={styles.titleBar}>
+                        <TouchableOpacity>
+                            <View>
+                                <Ionicons style={styles.back} underlayColor="#ffffff00" name="ios-arrow-back" size={24} color="#FEFEFE" onPress={() => navigation.navigate('ChallengeList')}/>
+                            </View>
+                        </TouchableOpacity>
+                    </View>    
+                    <Text h3 style={styles.headerStyle}>Settings</Text>
+                    <View style={styles.textContainer}>
+                        <Text h5 style={styles.textStyle}>Personal Details</Text>
+                        <View style={styles.hairline} />
+                        <Text h5 style={styles.bodyStyle}>Name</Text>
+                        <View style={styles.hairline} />
+                        <Text h5 style={styles.bodyStyle}>Email</Text>
+                        <View style={styles.hairline} />
                     </View>
-                    <View style={styles.rightSwitch}>
-                        <SwitchToggle />
-                    </View>  
-                </View>
-                <View style={styles.horizontalBar}>
-                    <View style={styles.leftText}>
-                        <Text h5 style={styles.textStyle}>Language</Text>
-                    </View>
-                    <View style={styles.rightText}>
-                        <Text h5 style={styles.subtextStyle}>English</Text>
-                    </View>  
-                </View>
-                <TouchableOpacity onPress={() => navigation.navigate('Help')}>
                     <View style={styles.horizontalBar}>
-                        <View style={styles.horizontalText}>
-                            <Text h5 style={styles.textStyle}>Help</Text>
+                        <View style={styles.leftText}>
+                            <Text h5 style={styles.textStyle}>Notifications</Text>
                         </View>
-                        <View style={styles.horizontalIcon}>
-                            <Ionicons style={styles.settings} underlayColor="#ffffff00" name="ios-arrow-forward" size={24} color="#FEFEFE" onPress={() => navigation.navigate('Help')}/>
+                        <View style={styles.rightSwitch}>
+                            <SwitchToggle />
                         </View>  
                     </View>
-                </TouchableOpacity>
-            <Spacer />
-            
-            <Spacer>
-            <Text style={{ fontSize: 35, fontWeight: '400'}}></Text>
-            <Button 
-                buttonStyle={styles.button1}
-                title="Sign Out"
-                onPress={signout}
-            />
-            </Spacer>
+                    <View style={styles.horizontalBar}>
+                        <View style={styles.leftText}>
+                            <Text h5 style={styles.textStyle}>Language</Text>
+                        </View>
+                        <View style={styles.rightText}>
+                            <Text h5 style={styles.subtextStyle}>English</Text>
+                        </View>  
+                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('Help')}>
+                        <View style={styles.horizontalBar}>
+                            <View style={styles.horizontalText}>
+                                <Text h5 style={styles.textStyle}>Help</Text>
+                            </View>
+                            <View style={styles.horizontalIcon}>
+                                <Ionicons style={styles.settings} underlayColor="#ffffff00" name="ios-arrow-forward" size={24} color="#FEFEFE" onPress={() => navigation.navigate('Help')}/>
+                            </View>  
+                        </View>
+                    </TouchableOpacity>
+                <Spacer />
+                <Spacer>
+                    <Text style={{ fontSize: 35, fontWeight: '400'}}></Text>
+                    <Button 
+                        buttonStyle={styles.button1}
+                        title="Sign Out"
+                        onPress={signout}
+                    />
+                </Spacer>
             </ImageBackground>
         </SafeAreaView>
     )
@@ -81,8 +78,7 @@ const AccountScreen = ({ navigation }) => {
 
 AccountScreen.navigationOptions = {
     header:null,
-  };
-
+};
 
 const styles = StyleSheet.create({
     textStyle: {
@@ -180,7 +176,6 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
     rightText:{ 
-        // backgroundColor: 'blue',
         width: '40%', 
         alignItems:'center', 
         justifyContent:'center', 

@@ -169,7 +169,6 @@ const styles = StyleSheet.create({
         color:'#22796F', 
         marginTop: 5,
         marginBottom: 5
-        // fontWeight: '200'
     },
     button1: {
         backgroundColor: '#e96d64',

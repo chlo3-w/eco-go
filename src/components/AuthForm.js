@@ -4,6 +4,7 @@ import { Text, Button, Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Spacer from './Spacer';
 
+// USER SIGNIN/SIGNOUT FORM
 const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -33,7 +34,6 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
                     />
                 }
             />
- 
             <Spacer />
             <Input 
                 label="Password:" 

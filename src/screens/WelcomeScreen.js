@@ -7,25 +7,23 @@ const WelcomeScreen = ({navigation}) => {
     return (
         <ImageBackground source={require('../../assets/signin-bg.png')} style={styles.container}>
             <View style={styles.headerText}>
-                {/* <Text style={{ fontSize: 78, color: '#fff'}}>eco:go</Text> */}
                 <Image source={require('../../assets/logo.png')} style={styles.image} resizeMode="center"/>
                 <Spacer />
                 <Text style={{ fontSize: 28, color: '#fff', marginTop: -90}}>Your sustainable future starts <Text style={{ textDecorationLine: 'underline'}}>right now.</Text></Text>
                 <Spacer />
             </View>
             <View style={styles.options}>
-                    <Button 
-                        buttonStyle={styles.button1}
-                        title="Get Started"
-                        onPress={() => navigation.navigate('Signup')}
-                    />
-                    {/* <Spacer /> */}
-                    <Button 
-                        buttonStyle={styles.button2}
-                        title="Sign in"
-                        titleStyle={{color: '#22796f'}}
-                        onPress={() => navigation.navigate('Signin')}
-                    />
+                <Button 
+                    buttonStyle={styles.button1}
+                    title="Get Started"
+                    onPress={() => navigation.navigate('Signup')}
+                />
+                <Button 
+                    buttonStyle={styles.button2}
+                    title="Sign in"
+                    titleStyle={{color: '#22796f'}}
+                    onPress={() => navigation.navigate('Signin')}
+                />
             </View>
         </ImageBackground>
     );

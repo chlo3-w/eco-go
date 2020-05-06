@@ -33,25 +33,22 @@ export default class SurveyCompletedScreen extends Component {
                 </View> 
                 <Text h3 style={styles.headerStyle}>Survey Results</Text>
                 <View style={styles.container}>
-                    {/* <ScrollView> */}
-                        <Text style={styles.questionText}>These results help us tailor your eco-challenges by using your eating, shopping and travel habits.</Text>
-                        <Text style={styles.resultText}>Results</Text>
-                        <Text style={styles.result}>Your age: {answers.age}</Text>
-                        <Text style={styles.result}>Your diet: {answers.diet.value}</Text>
-                        <Text style={styles.result}>Your travel: {answers.vehicle.value}</Text>
-                        <Text style={styles.result}>Your eco-score: {(answers.localFood.value + answers.foodWaste.value + answers.flights.value + answers.publicTransport.value + answers.clothes.value + answers.healthBeauty.value + answers.localShop.value)}</Text>
-                        <Text style={styles.infoText}>(Your eco-score is a way of displaying how much you currently contribute to greenhouse gas emissions. This is easily reduced by changing your daily habits and living more sustainably!)</Text>
-                        {/* <Text>Raw JSON: {JSON.stringify(this.props.navigation.getParam('surveyAnswers', {}))}</Text> */}
-                    {/* </ScrollView> */}
+                    <Text style={styles.questionText}>These results help us tailor your eco-challenges by using your eating, shopping and travel habits.</Text>
+                    <Text style={styles.resultText}>Results</Text>
+                    <Text style={styles.result}>Your age: {answers.age}</Text>
+                    <Text style={styles.result}>Your diet: {answers.diet.value}</Text>
+                    <Text style={styles.result}>Your travel: {answers.vehicle.value}</Text>
+                    <Text style={styles.result}>Your eco-score: {(answers.localFood.value + answers.foodWaste.value + answers.flights.value + answers.publicTransport.value + answers.clothes.value + answers.healthBeauty.value + answers.localShop.value)}</Text>
+                    <Text style={styles.infoText}>(Your eco-score is a way of displaying how much you currently contribute to greenhouse gas emissions. This is easily reduced by changing your daily habits and living more sustainably!)</Text>
                     <View style={styles.buttonContainer}>
-                <Button 
-                    buttonStyle={styles.button1}
-                    title="Homepage"
-                    color="#e96d64"
-                    backgroundColor="#000"
-                    onPress={() => {this.props.navigation.navigate('ChallengeList');}}
-                />
-                </View>
+                        <Button 
+                            buttonStyle={styles.button1}
+                            title="Homepage"
+                            color="#e96d64"
+                            backgroundColor="#000"
+                            onPress={() => {this.props.navigation.navigate('ChallengeList');}}
+                        />
+                    </View>
                 </View>
             </View>
         );

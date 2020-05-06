@@ -36,15 +36,13 @@ const ChallengeListScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.logoImage}>
-            {/* <Text style={styles.textStyleBrand}>eco:go</Text> */}
-            <Image source={require('../../assets/logo2.png')} style={styles.logo} resizeMode="center"/>
-            {/* <Text style={styles.textStyleTitle}>hello, Chloe!</Text> */}
+                <Image source={require('../../assets/logo2.png')} style={styles.logo} resizeMode="center"/>
             </View>
             <Text h5 style={styles.textStyleHead}>Overview</Text>
             <View style={styles.hairline} />
             <Spacer />
             <View style={{ flex: 1 }}>
-            <Text h5 style={{marginTop: -20, padding:10, paddingLeft: 15, fontWeight: '400', color: '#FEFEFE'}}>Weekly Challenges</Text>
+                <Text h5 style={{marginTop: -20, padding:10, paddingLeft: 15, fontWeight: '400', color: '#FEFEFE'}}>Weekly Challenges</Text>
                 <FlatList
                     horizontal= {true}
                     showsHorizontalScrollIndicator={false}
@@ -67,9 +65,6 @@ const ChallengeListScreen = ({ navigation }) => {
             <View style={{ flex: 1, marginTop: -110 }}>
                 <Text h5 style={{padding:10, paddingLeft: 15, fontWeight: '400', textAlign: 'center', color: '#FEFEFE'}}>Track your impact</Text>
                     <View style={styles.chart}>
-                    {/* <View>
-                        <Text h5 style={{padding:10, marginTop:18, color: 'white', opacity: 0.5, fontWeight: '200', position:'absolute', fontSize: 10}}>Carbon saved • Water saved</Text>
-                    </View> */}
                         <Chart />
                     </View>
             </View>

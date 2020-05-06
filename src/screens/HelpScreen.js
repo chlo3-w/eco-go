@@ -60,11 +60,6 @@ const HelpScreen = ({ navigation }) => {
                         <Spacer />
                         <Spacer />
                         <Spacer />
-                        {/* <Text h5 style={styles.bodyStyle}>How can I get in touch?</Text>
-                        <Text h5 style={styles.answerStyle}>
-                            You can get in touch via email at help@eco-go.com or via any of our social media channels (Facebook and Twitter).
-                        </Text>
-                        <Spacer /> */}
                     </ScrollView>
                 </View>
             </ImageBackground>

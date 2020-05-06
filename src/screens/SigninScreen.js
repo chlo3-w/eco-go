@@ -17,35 +17,33 @@ const SigninScreen = ({ navigation }) => {
         resetScrollToCoords={{ x: 0, y: 0 }}
         contentContainerStyle={styles.container}
         scrollEnabled={false}>
-        <ImageBackground source={require('../../assets/signin-bg1.png')} style={styles.backgroundImage}>
-        <View style={styles.container}>
-        <View style={styles.textBox}>
-            <NavigationEvents onWillBlur={clearErrorMessage}/>
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <AuthForm 
-                headerText="Sign in to your account"
-                errorMessage={state.errorMessage}
-                submitButtonText="Sign In"
-                onSubmit={signin}
-            />
-            <NavLink 
-                routeName="Signup"
-                text="Don't have an account? Click here to sign up  "
-            />
-        </View>
-        </View>
-        
-        </ImageBackground>
-        </KeyboardAwareScrollView>
-        
+            <ImageBackground source={require('../../assets/signin-bg1.png')} style={styles.backgroundImage}>
+                <View style={styles.container}>
+                    <View style={styles.textBox}>
+                        <NavigationEvents onWillBlur={clearErrorMessage}/>
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <Spacer />
+                        <AuthForm 
+                            headerText="Sign in to your account"
+                            errorMessage={state.errorMessage}
+                            submitButtonText="Sign In"
+                            onSubmit={signin}
+                        />
+                        <NavLink 
+                            routeName="Signup"
+                            text="Don't have an account? Click here to sign up  "
+                        />
+                    </View>
+                </View>
+            </ImageBackground>
+        </KeyboardAwareScrollView> 
     );
 };
 
@@ -58,17 +56,11 @@ SigninScreen.navigationOptions = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'flex-end',
-        // marginBottom: 100,
-        // backgroundColor: '#22796f'
     },
     backgroundImage: {
         flex: 1,
         width: null,
         height: null,
-        // marginTop: 250,
-        // // marginHorizontal: 25,
-        // position: 'absolute'
     },
     textBox: {
         marginBottom: 50,

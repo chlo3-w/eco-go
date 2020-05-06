@@ -16,23 +16,23 @@ const SignupScreen = ({ navigation }) => {
         resetScrollToCoords={{ x: 0, y: 0 }}
         contentContainerStyle={styles.container}
         scrollEnabled={false}>
-        <ImageBackground source={require('../../assets/signin-bg1.png')} style={styles.backgroundImage}>
-        <View style={styles.container}>
-        <View style={styles.textBox}>
-            <NavigationEvents onWillBlur={clearErrorMessage}/>
-            <AuthForm 
-                headerText="Sign up to eco:go"
-                errorMessage={state.errorMessage}
-                submitButtonText="Sign Up"
-                onSubmit={signup}
-            />
-            <NavLink 
-                routeName="Signin"
-                text="Already have an account? Click here to sign in  "
-            />
-        </View>
-        </View>
-        </ImageBackground>
+            <ImageBackground source={require('../../assets/signin-bg1.png')} style={styles.backgroundImage}>
+                <View style={styles.container}>
+                    <View style={styles.textBox}>
+                        <NavigationEvents onWillBlur={clearErrorMessage}/>
+                        <AuthForm 
+                            headerText="Sign up to eco:go"
+                            errorMessage={state.errorMessage}
+                            submitButtonText="Sign Up"
+                            onSubmit={signup}
+                        />
+                        <NavLink 
+                            routeName="Signin"
+                            text="Already have an account? Click here to sign in  "
+                        />
+                    </View>
+                </View>
+            </ImageBackground>
         </KeyboardAwareScrollView>
     );
 };
@@ -53,9 +53,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-        // marginTop: 250,
-        // // marginHorizontal: 25,
-        // position: 'absolute'
     },
     textBox: {
         marginBottom: 50,

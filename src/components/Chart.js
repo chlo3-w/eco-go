@@ -4,6 +4,7 @@ import { Path } from 'react-native-svg'
 import { AreaChart, Grid } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
 
+// CHART ON HOMEPAGE
 export default function Chart() {
     
     const data = [ 50, 10, 40, 50, 20, 24, 50, 75, 50, 53, 53, 24 ]
